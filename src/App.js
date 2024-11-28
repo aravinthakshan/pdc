@@ -62,7 +62,7 @@ export default function ManipulLandingPage() {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             Product Development Centre
-            <span className="block text-[#FFD700] mt-2">Empowering Student Innovation</span> 
+            <span className="block text-[#FFD700] mt-2">Empowering Students</span> 
           </motion.h1>
           <motion.p 
             className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8"
