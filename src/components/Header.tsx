@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -18,32 +18,35 @@ export default function Header() {
 
   return (
     <motion.div 
-      className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md"  // Set background-color to white
+      className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <img 
-              src="/Manipal.png" 
+          <div className="flex items-center">
+                    <img 
+            src="/ManipalLogo.jpg" 
+            alt="PDC Logo" 
+            className="h-10 w-auto max-h-10 max-w-full rounded-lg"
+          />
+
+            {/* <img 
+              src="/ManipalLogo.jpg" 
               alt="PDC Logo" 
               className="h-10 w-auto rounded-lg"
-            />
-            <div className="text-xl font-medium tracking-wide text-gray-800">
-              PDC, MIT Manipal
-            </div>
+            /> */}
           </div>
           
           {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-4 items-center">
+          <nav className="hidden md:flex space-x-6 items-center">
             {menuItems.map((item, index) => (
               <a
                 key={index}
                 href={item.href}
                 target={item.isButton ? "_blank" : undefined}
-                className={`text-gray-600 hover:text-[#CF7500] transition-colors ${
+                className={`text-gray-600 hover:text-[#CF7500] transition-colors text-sm ${
                   item.isButton
                     ? "bg-[#CF7500] text-white px-4 py-2 rounded-full hover:bg-[#A55800]"
                     : ""
@@ -80,10 +83,10 @@ export default function Header() {
                     key={index}
                     href={item.href}
                     target={item.isButton ? "_blank" : undefined}
-                    className={`text-gray-600 hover:text-[#CF7500] transition-colors ${
+                    className={`text-gray-600 hover:text-[#CF7500] transition-colors text-sm ${
                       item.isButton
-                        ? "bg-[#CF7500] text-white px-4 py-2 rounded-full hover:bg-[#A55800] w-full text-center"
-                        : ""
+                        ? "bg-[#CF7500] text-white px-4 py-2 rounded-full hover:bg-[#A55800] w-full text-center mx-4"
+                        : "w-full text-center"
                     }`}
                     onClick={toggleMobileMenu}
                   >
@@ -98,3 +101,4 @@ export default function Header() {
     </motion.div>
   );
 }
+

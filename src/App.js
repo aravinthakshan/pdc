@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   CodeBracketIcon, 
   AcademicCapIcon, 
@@ -17,19 +17,11 @@ import {
   FolderIcon 
 } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
-import Header from './components/Header.tsx';
+import Header from './components/Header';
 
 export default function ManipulLandingPage() {
   const [activeProject, setActiveProject] = useState(null);
-  const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Working
   const projects = [
     {
       title: "Faculty Management System",
@@ -50,7 +42,7 @@ export default function ManipulLandingPage() {
       technologies: ["Python", "TensorFlow", "React"],
     }
   ];
-///* through Practical Technology Projects */
+
   return (
     <div className="min-h-screen bg-[#F4F4F4] antialiased font-sans">
       <Header />
@@ -62,18 +54,18 @@ export default function ManipulLandingPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             Product Development Centre
-            <span className="block text-[#FFD700] mt-2">Empowering Student Innovation </span> 
+            <span className="block text-[#FFD700] mt-2">Empowering Student Innovation</span> 
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl max-w-3xl mx-auto mb-8"
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -87,25 +79,81 @@ export default function ManipulLandingPage() {
           >
             <a 
               href="#about"
-              className="bg-white text-[#CF7500] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#FFD700] transition-colors inline-block"
+              className="bg-white text-[#CF7500] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#FFD700] transition-colors inline-block"
             >
               Learn More
             </a>
           </motion.div>
         </div>
       </motion.div>
-
       {/* About Section */}
+<motion.div 
+  id="about" 
+  className="py-16 bg-white"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  viewport={{ once: true }}
+>
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col md:flex-row items-center md:space-x-8">
+      {/* Image Section */}
+      <motion.div 
+        className="md:w-1/2 mb-6 md:mb-0"
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <img 
+          src="/Building.jpg" 
+          alt="About Image" 
+          className="rounded-lg shadow-md w-full object-cover"
+        />
+      </motion.div>
+
+      {/* Text Section */}
+      <motion.div 
+        className="md:w-1/2"
+        initial={{ x: 50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* About Us Heading */}
+        <motion.h2 
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-right"
+          initial={{ y: -90, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          About Us
+        </motion.h2>
+        
+        {/* Description */}
+        <p className="text-base sm:text-lg text-gray-700 mb-4 text-right">
+          The <strong>Product Development Centre</strong> (PDC) is an initiative by the 
+          <strong> Department of Computer Science & Engineering of MIT Manipal</strong>.
+          It offers opportunities to work on real-time projects under faculty mentorship, aligned with industry standards 
+          and technological advancements.
+        </p>
+        <p className="text-base sm:text-lg text-gray-700 text-right">
+          To foster an environment where students are introduced to cutting-edge technology platforms and tools, 
+          focusing on skill development by guiding them to shape their innovative ideas into viable and impactful products.
+        </p>
+      </motion.div>
+    </div>
+  </div>
+</motion.div>
+
+      {/* About Section
       <motion.div 
         id="about" 
-        className="py-24 bg-white"
+        className="py-16 bg-white"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.8 } }}
+        animate={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
@@ -114,7 +162,7 @@ export default function ManipulLandingPage() {
           </motion.h2>
           <div className="flex flex-col md:flex-row items-center md:space-x-8">
             <motion.div 
-              className="md:w-1/2"
+              className="md:w-1/2 mb-6 md:mb-0"
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
@@ -126,43 +174,43 @@ export default function ManipulLandingPage() {
               />
             </motion.div>
             <motion.div 
-              className="md:w-1/2 mt-8 md:mt-0"
+              className="md:w-1/2"
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-base sm:text-lg text-gray-700 mb-4">
                 The <strong>Product Development Centre</strong> (PDC) is an initiative by the 
                 <strong> Department of Computer Science & Engineering of MIT Manipal</strong> <br></br> it offers opportunities to work on real-time projects 
                 under faculty mentorship, aligned with industry standards and technological advancements.
               </p>
-              <p className="text-lg text-gray-700 mb-4">
+              <p className="text-base sm:text-lg text-gray-700">
                 To foster an environment where students are introduced to cutting-edge technology platforms and tools, 
                 focusing on skill development by guiding them to shape their innovative ideas into viable and impactful products.
               </p>
             </motion.div>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
-      {/* Key Benefits Section */}
+      {/* Benefits Section */}
       <motion.div 
         id="benefits" 
-        className="bg-[#F4F4F4] py-24"
+        className="py-16 bg-[#F4F4F4]"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.8 } }}
+        animate={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
             Key Benefits
           </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {[
               { icon: RocketLaunchIcon, title: "Real-world Experience", description: "Gain hands-on experience in full-stack development and project management methodologies." },
               { icon: CheckBadgeIcon, title: "Industry-Relevant Skills", description: "Develop industry relevant skills in building modern technologies." },
@@ -173,56 +221,14 @@ export default function ManipulLandingPage() {
             ].map((benefit, index) => (
               <motion.div 
                 key={index}
-                className="bg-white p-6 rounded-xl text-center shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <benefit.icon className="w-12 h-12 mx-auto text-[#CF7500] mb-4" />
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Tech Stacks Section */}
-      <motion.div 
-        id="tech-stack" 
-        className="bg-white py-24"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.8 } }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2 
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Tech Stacks
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12 text-center">
-            {[
-              { icon: CodeBracketIcon, title: "Languages", description: "JavaScript, TypeScript" },
-              { icon: DevicePhoneMobileIcon, title: "Front-End", description: "ReactJS, React Native" },
-              { icon: ServerIcon, title: "Back-End", description: "Spring Boot, Microservices, DDD" },
-              { icon: TableCellsIcon, title: "Database", description: "PostgreSQL" },
-              { icon: Cog6ToothIcon, title: "DevOps", description: "Jenkins, Docker, Kubernetes" },
-              { icon: WrenchScrewdriverIcon, title: "Additional Tools", description: "Figma, Git, VS Code, Postman" },
-            ].map((stack, index) => (
-              <motion.div 
-                key={index}
-                className="flex flex-col items-center"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <stack.icon className="w-14 h-14 text-[#CF7500] mb-4" />
-                <h3 className="text-lg font-semibold text-gray-800">{stack.title}</h3>
-                <p className="text-gray-600">{stack.description}</p>
+                <benefit.icon className="w-10 h-10 sm:w-12 sm:h-12 text-[#CF7500] mb-4" />
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{benefit.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -232,27 +238,25 @@ export default function ManipulLandingPage() {
       {/* Projects Section */}
       <motion.div 
         id="projects" 
-        className="py-24 bg-white"
+        className="py-16 bg-white"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 0.8 } }}
+        animate={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
-            className="text-4xl font-bold text-center text-gray-900 mb-12"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
             Upcoming Projects
           </motion.h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {projects.map((project, index) => (
               <motion.div 
                 key={index}
-                className="bg-[#F4F4F4] rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl"
-                onMouseEnter={() => setActiveProject(index)}
-                onMouseLeave={() => setActiveProject(null)}
+                className="bg-[#F4F4F4] rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -264,18 +268,18 @@ export default function ManipulLandingPage() {
                     className="w-full h-48 object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-sm sm:text-base text-gray-600 mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span 
                         key={techIndex} 
-                        className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded"
+                        className="bg-gray-100 text-gray-700 text-xs sm:text-sm px-2 py-1 rounded"
                       >
                         {tech}
                       </span>
@@ -288,130 +292,157 @@ export default function ManipulLandingPage() {
         </div>
       </motion.div>
 
-  {/* Eligibility and Contact Section */}
-  <motion.div 
-    className="py-24 bg-gradient-to-b [#F4F4F4]"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1, transition: { duration: 0.8 } }}
-    viewport={{ once: true }}
-  >
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* Eligibility Section */}
-        <motion.div 
-          className="bg-white rounded-lg shadow-md p-8"  // Added box styles
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Eligibility Criteria</h2>
-          <ul className="space-y-4 text-gray-700">
-            {[
-              "Open to B.Tech students from 4th, 6th, and 8th Semesters, no backlogs.",
-              "Familiarity with HTML, CSS, and JavaScript, basic understanding of Java and OOP concepts.",
-              "Willingness to learn and adapt to new technologies, frameworks and dedicate sufficient time.",
-              "Good communication skills and the ability to work effectively in a team environment.",
-            ].map((criterion, index) => (
-              <li key={index} className="flex items-start">
-                <CheckBadgeIcon className="w-6 h-6 text-[#CF7500] mr-3 mt-1 flex-shrink-0" />
-                <span>{criterion}</span>
-              </li>
-            ))}
-          </ul>
-          {/* <motion.img 
-            src="/eligibility.jpg" 
-            alt="Eligibility" 
-            className="mt-8 rounded-lg shadow-md"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          /> */}
-        </motion.div>
+      {/* Contact Section */}
+      <motion.div 
+        className="py-16 bg-[#F4F4F4]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Eligibility Section */}
+            <motion.div 
+              className="bg-white rounded-xl shadow-md p-6 sm:p-8"
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Eligibility Criteria</h2>
+              <ul className="space-y-4 text-sm sm:text-base text-gray-700">
+                {[
+                  "Open to B.Tech students from 4th, 6th, and 8th Semesters, no backlogs.",
+                  "Familiarity with HTML, CSS, and JavaScript, basic understanding of Java and OOP concepts.",
+                  "Willingness to learn and adapt to new technologies, frameworks and dedicate sufficient time.",
+                  "Good communication skills and the ability to work effectively in a team environment.",
+                ].map((criterion, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckBadgeIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#CF7500] mr-3 mt-1 flex-shrink-0" />
+                    <span>{criterion}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
 
-        {/* Contact Section */}
-        <motion.div 
-          className="bg-white rounded-lg shadow-md p-8"  // Added box styles
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Contact Us</h2>
-          <div className="space-y-6">
-            {[
-              { icon: EnvelopeIcon, title: "Email", content: "manoj.r@manipal.edu", href: "mailto:manoj.r@manipal.edu" },
-              { icon: PhoneIcon, title: "Mobile", content: "+91 9740288939", href: "tel:+919740288939" },
-              { icon: MapPinIcon, title: "Location", content: "Manipal Institute of Technology, Manipal, Karnataka 576104" },
-            ].map((item, index) => (
-              <div key={index} className="flex items-center">
-                <item.icon className="w-8 h-8 text-[#CF7500] mr-4" />
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
-                  {item.href ? (
-                    <a 
-                      href={item.href}
-                      className="text-gray-600 hover:text-[#CF7500] transition-colors"
-                    >
-                      {item.content}
-                    </a>
-                  ) : (
-                    <p className="text-gray-600">{item.content}</p>
-                  )}
+            {/* Contact Section */}
+            <motion.div 
+              className="bg-white rounded-xl shadow-md p-6 sm:p-8"
+              initial={{ x: 50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  {/* Email Contacts */}
+                  <div className="flex items-start space-x-4">
+                    <EnvelopeIcon className="w-6 h-6 text-[#CF7500] flex-shrink-0" />
+                    <div>
+                      <h3 className="text-base sm:text-lg font-medium text-gray-900">Email</h3>
+                      <div className="space-y-1 text-sm sm:text-base">
+                        <a href="mailto:manoj.r@manipal.edu" className="text-gray-600 hover:text-[#CF7500] block">
+                          manoj.r@manipal.edu
+                        </a>
+                        <a href="mailto:mohan.shenoy@manipal.edu" className="text-gray-600 hover:text-[#CF7500] block">
+                          mohan.shenoy@manipal.edu
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Phone Contacts */}
+                  <div className="flex items-start space-x-4">
+                    <PhoneIcon className="w-6 h-6 text-[#CF7500] flex-shrink-0" />
+                    <div>
+                      <h3 className="text-base sm:text-lg font-medium text-gray-900">Phone</h3>
+                      <div className="space-y-1 text-sm sm:text-base">
+                        <a href="tel:+919740288939" className="text-gray-600 hover:text-[#CF7500] block">
+                          +91 9740288939
+                        </a>
+                        <a href="tel:+918277109560" className="text-gray-600 hover:text-[#CF7500] block">
+                          +91 8277109560
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Location */}
+                  <div className="flex items-start space-x-4">
+                    <MapPinIcon className="w-6 h-6 text-[#CF7500] flex-shrink-0" />
+                    <div>
+                      <h3 className="text-base sm:text-lg font-medium text-gray-900">Location</h3>
+                      <p className="text-sm sm:text-base text-gray-600">
+                        Manipal Institute of Technology, Manipal, Karnataka 576104
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
+            </motion.div>
           </div>
-          {/* <motion.img 
-            src="/contact.jpg" 
-            alt="Contact" 
-            className="mt-8 rounded-lg shadow-md"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          /> */}
-        </motion.div>
-      </div>
-    </div>
-  </motion.div>
+        </div>
+      </motion.div>
 
-      {/* Contact CTA */}
+      {/* CTA Section - Reduced height */}
       <motion.div 
-        className="bg-[#CF7500] py-16 text-center"
+        className="bg-[#CF7500] py-6 sm:py-6 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.h2 
-          className="text-4xl font-bold text-white mb-4"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          Join the Product Development Centre
-        </motion.h2>
-        <motion.p 
-          className="text-white text-xl mb-8"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Transform your learning experience with real-world projects
-        </motion.p>
-        <motion.a 
-          href="https://docs.google.com/forms/d/1MllTwj8JtS2yDV8dERSx9-iQakt_pFQ483qYHoIS6rU/viewform?edit_requested=true" 
-          target="_blank"
-          className="bg-white text-[#CF7500] px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#FFF4E6] transition-colors inline-block"
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          Apply Now
-        </motion.a>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2 
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Join the Product Development Centre
+          </motion.h2>
+          <motion.p 
+            className="text-lg sm:text-xl text-white mb-6 sm:mb-8"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Transform your learning experience with real-world projects
+          </motion.p>
+          <motion.a 
+            href="https://docs.google.com/forms/d/1MllTwj8JtS2yDV8dERSx9-iQakt_pFQ483qYHoIS6rU/viewform?edit_requested=true" 
+            target="_blank"
+            className="bg-white text-[#CF7500] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#FFF4E6] transition-colors inline-block"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Apply Now
+          </motion.a>
+        </div>
       </motion.div>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-6 text-center">
-        <p>© 2024 Department of Computer Science & Engineering, MIT Manipal</p>
-        <p className="text-sm text-gray-400 mt-2">*Conditions Apply</p>
+      {/* Footer with Credits */}
+      <footer className="bg-gray-900 text-white py-4">
+        <div className="max-5-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-center md:text-left">
+              <p className="text-sm sm:text-base">© 2024 Department of Computer Science & Engineering, MIT Manipal</p>
+              <p className="text-xs sm:text-sm text-gray-400 mt-1">*Conditions Apply</p>
+            </div>
+            <div className="text-center md:text-right">
+              <p className="text-xs sm:text-sm text-gray-400">
+                Website designed by{' '}
+                <a 
+                  href="https://www.linkedin.com/in/aravinthakshan" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[#CF7500] hover:text-[#A55800] transition-colors"
+                >
+                  A S Aravinthakshan
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
