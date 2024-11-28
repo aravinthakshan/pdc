@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -14,11 +14,15 @@ export default function Header() {
     { href: "#projects", label: "Projects" },
     { href: "#benefits", label: "Benefits" },
     { href: "#eligibility", label: "Contact Us" },
-    { href: "https://docs.google.com/forms/d/1MllTwj8JtS2yDV8dERSx9-iQakt_pFQ483qYHoIS6rU/viewform?edit_requested=true", label: "Apply Now", isButton: true },
+    {
+      href: "https://docs.google.com/forms/d/1MllTwj8JtS2yDV8dERSx9-iQakt_pFQ483qYHoIS6rU/viewform?edit_requested=true",
+      label: "Apply Now",
+      isButton: true,
+    },
   ];
 
   return (
-    <motion.div 
+    <motion.div
       className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -27,11 +31,11 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 relative">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-                    <img 
-            src="/ManipalLogo.jpg" 
-            alt="PDC Logo" 
-            className="h-10 w-auto max-h-10 max-w-full rounded-lg"
-          />
+            <img
+              src="/ManipalLogo.jpg"
+              alt="PDC Logo"
+              className="h-10 w-auto max-h-10 max-w-full rounded-lg"
+            />
 
             {/* <img 
               src="/ManipalLogo.jpg" 
@@ -39,7 +43,7 @@ export default function Header() {
               className="h-10 w-auto rounded-lg"
             /> */}
           </div>
-          
+
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-6 items-center">
             {menuItems.map((item, index) => (
@@ -59,8 +63,8 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
-            onClick={toggleMobileMenu} 
+          <button
+            onClick={toggleMobileMenu}
             className="md:hidden text-gray-600 focus:outline-none"
             aria-label="Toggle mobile menu"
           >
@@ -71,7 +75,7 @@ export default function Header() {
         {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div 
+            <motion.div
               className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-50"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -102,4 +106,3 @@ export default function Header() {
     </motion.div>
   );
 }
-
