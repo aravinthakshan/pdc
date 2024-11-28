@@ -86,74 +86,19 @@ export default function ManipulLandingPage() {
           </motion.div>
         </div>
       </motion.div>
-      {/* About Section */}
-<motion.div 
-  id="about" 
-  className="py-16 bg-white"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  viewport={{ once: true }}
->
-  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex flex-col md:flex-row items-center md:space-x-8">
-      {/* Image Section */}
-      <motion.div 
-        className="md:w-1/2 mb-6 md:mb-0"
-        initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <img 
-          src="/Building.jpg" 
-          alt="About Image" 
-          className="rounded-lg shadow-md w-full object-cover"
-        />
-      </motion.div>
 
-      {/* Text Section */}
-      <motion.div 
-        className="md:w-1/2"
-        initial={{ x: 50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* About Us Heading */}
-        <motion.h2 
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-right"
-          initial={{ y: -90, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          About Us
-        </motion.h2>
-        
-        {/* Description */}
-        <p className="text-base sm:text-lg text-gray-700 mb-4 text-right">
-          The <strong>Product Development Centre</strong> (PDC) is an initiative by the 
-          <strong> Department of Computer Science & Engineering of MIT Manipal</strong>.
-          It offers opportunities to work on real-time projects under faculty mentorship, aligned with industry standards 
-          and technological advancements.
-        </p>
-        <p className="text-base sm:text-lg text-gray-700 text-right">
-          To foster an environment where students are introduced to cutting-edge technology platforms and tools, 
-          focusing on skill development by guiding them to shape their innovative ideas into viable and impactful products.
-        </p>
-      </motion.div>
-    </div>
-  </div>
-</motion.div>
 
-      {/* About Section
-      <motion.div 
+       {/* About Section */}
+       <motion.div 
         id="about" 
         className="py-16 bg-white"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: 1, transition: { duration: 0.8 } }}
         viewport={{ once: true }}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
+            className="text-4xl font-bold text-center text-gray-900 mb-12"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
@@ -162,7 +107,7 @@ export default function ManipulLandingPage() {
           </motion.h2>
           <div className="flex flex-col md:flex-row items-center md:space-x-8">
             <motion.div 
-              className="md:w-1/2 mb-6 md:mb-0"
+              className="md:w-1/2"
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
@@ -174,24 +119,31 @@ export default function ManipulLandingPage() {
               />
             </motion.div>
             <motion.div 
-              className="md:w-1/2"
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="text-base sm:text-lg text-gray-700 mb-4">
-                The <strong>Product Development Centre</strong> (PDC) is an initiative by the 
-                <strong> Department of Computer Science & Engineering of MIT Manipal</strong> <br></br> it offers opportunities to work on real-time projects 
-                under faculty mentorship, aligned with industry standards and technological advancements.
-              </p>
-              <p className="text-base sm:text-lg text-gray-700">
-                To foster an environment where students are introduced to cutting-edge technology platforms and tools, 
-                focusing on skill development by guiding them to shape their innovative ideas into viable and impactful products.
-              </p>
-            </motion.div>
+  className="md:w-1/2 mt-8 md:mt-0"
+  initial={{ x: 50, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ duration: 0.6 }}
+>
+  <p className="text-lg text-gray-700 mb-4 text-center">
+    <strong>The Department of Computer Science & Engineering (CSE)</strong> was established in 1985. Over the years, the department has developed to become a Centre of excellence, providing in-depth technical knowledge and opportunities for innovation and research.
+  </p>
+
+  <p className="text-lg text-gray-700 mb-4 text-center">
+    <strong>Vision:</strong> Excellence in Computer Science & Engineering education through continuous learning, research, and teamwork.
+  </p>
+
+  <p className="text-lg text-gray-700 mb-4 text-center">
+    <strong>Mission:</strong> To impart excellent Computer Science & Engineering education for professional roles in a changing and challenging technological world, to advance knowledge through quality research in important emerging areas in the discipline, and to build a strong relationship with industry, academia, and society.
+  </p>
+
+  <p className="text-lg text-gray-700 mb-4 text-center">
+    Aligned with our department's vision, we have formed a faculty team to enhance student growth through cutting-edge technologies and mentorship, transforming innovative ideas into impactful products.
+  </p>
+</motion.div>
+
           </div>
         </div>
-      </motion.div> */}
+      </motion.div>
 
       {/* Benefits Section */}
       <motion.div 
@@ -243,7 +195,7 @@ export default function ManipulLandingPage() {
         animate={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-9">
           <motion.h2 
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
             initial={{ y: 50, opacity: 0 }}

@@ -23,7 +23,7 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 relative">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
                     <img 
