@@ -13,6 +13,7 @@ export default function Header() {
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     { href: "#benefits", label: "Benefits" },
+    { href: "#eligibility", label: "Contact Us" },
     { href: "https://docs.google.com/forms/d/1MllTwj8JtS2yDV8dERSx9-iQakt_pFQ483qYHoIS6rU/viewform?edit_requested=true", label: "Apply Now", isButton: true },
   ];
 

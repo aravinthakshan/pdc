@@ -56,13 +56,13 @@ export default function ManipulLandingPage() {
 >
   <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <motion.h1 
-      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#0F172A]"  // Dark Blue
+      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#000000]"  // Dark Blue
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.8 }}
     >
       Product Development Centre
-      <span className="block text-[#d67520] mt-2">Empowering Student Innovation</span>
+      <span className="block text-[#d67520] mt-2">Empowering Students</span>
     </motion.h1>
     <motion.p 
       className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 text-[#6B7280]"  // Light Gray for description
@@ -247,11 +247,22 @@ export default function ManipulLandingPage() {
 
       {/* Contact Section */}
       <motion.div 
+        id="eligibility" 
         className="py-16 bg-[#F4F4F4]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         viewport={{ once: true }}
       >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2 
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Eligibility and Contact
+          </motion.h2>
+          </div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Eligibility Section */}
