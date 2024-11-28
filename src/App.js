@@ -49,45 +49,43 @@ export default function ManipulLandingPage() {
       
       {/* Hero Section */}
       <motion.div 
-  className="h-screen flex items-center justify-center bg-[#F4F4F4] text-black"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
->
-  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <motion.h1 
-      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#000000]"  // Dark Blue
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.8 }}
-    >
-      Product Development Centre
-      <span className="block text-[#d67520] mt-2">Empowering Students</span>
-    </motion.h1>
-    <motion.p 
-      className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 text-[#6B7280]"  // Light Gray for description
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.4, duration: 0.8 }}
-    >
-      An initiative by the Department of Computer Science & Engineering, MIT Manipal to enhance student learning through hands-on product creation.
-    </motion.p>
-    <motion.div
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.6, duration: 0.8 }}
-    >
-      <a 
-        href="#about"
-        className="bg-[#d67520] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#FF7A33] transition-colors inline-block"
+        className="h-screen flex items-center justify-center bg-gradient-to-br from-[#CF7500] to-[#A55800] text-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
-        Learn More
-      </a>
-    </motion.div>
-  </div>
-</motion.div>
-
-
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h1 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            Product Development Centre
+            <span className="block text-[#FFD700] mt-2">Empowering Student Innovation</span> 
+          </motion.h1>
+          <motion.p 
+            className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            An initiative by the Department of Computer Science & Engineering, MIT Manipal to enhance student learning through hands-on product creation.
+          </motion.p>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <a 
+              href="#about"
+              className="bg-white text-[#CF7500] px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#FFD700] transition-colors inline-block"
+            >
+              Learn More
+            </a>
+          </motion.div>
+        </div>
+      </motion.div>
 
        {/* About Section */}
        <motion.div 
