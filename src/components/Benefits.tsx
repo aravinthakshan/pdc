@@ -53,7 +53,7 @@ const Benefits = () => {
   return (
     <motion.div
       id="benefits"
-      className="py-16 bg-white"
+      className="py-16 bg-[#F4F4F4]"
       initial="initial"
       animate="animate"
       variants={fadeIn}
@@ -73,7 +73,7 @@ const Benefits = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className="bg-gray-100 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
               variants={fadeIn}
             >
               <benefit.icon className="w-10 h-10 sm:w-12 sm:h-12 text-[#CF7500] mb-4" />

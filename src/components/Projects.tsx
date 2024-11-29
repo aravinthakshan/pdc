@@ -50,7 +50,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-[#F4F4F4] rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
               variants={fadeIn}
             >
               <div className="relative">
