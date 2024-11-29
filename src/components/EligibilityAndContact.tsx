@@ -66,10 +66,16 @@ const EligibilityAndContact = () => {
                         manoj.r@manipal.edu
                       </a>
                       <a
-                        href="mailto:mohan.shenoy@manipal.edu"
+                        href="mailto:Kishore.b@manipal.edu"
                         className="text-gray-600 hover:text-[#CF7500] block"
                       >
-                        mohan.shenoy@manipal.edu
+                        Kishore.b@manipal.edu
+                      </a>
+                      <a
+                        href="mailto:rani.panicker@manipal.edu"
+                        className="text-gray-600 hover:text-[#CF7500] block"
+                      >
+                        rani.panicker@manipal.edu
                       </a>
                     </div>
                   </div>
