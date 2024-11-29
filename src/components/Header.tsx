@@ -9,17 +9,31 @@ export default function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const menuItems = [
-    { href: "#about", label: "About" },
+  interface MenuItem {
+    href: string;
+    label: string;
+    isButton?: boolean; // Optional property
+  }
+
+  const menuItems: MenuItem[] = [
+    { href: "#about", label: "About Us" },
     { href: "#projects", label: "Projects" },
     { href: "#benefits", label: "Benefits" },
-    { href: "#eligibility", label: "Contact Us" },
+    { href: "#eligibility", label: "Eligibility" },
+    { href: "#contact", label: "Contact Us" },
     {
       href: "https://docs.google.com/forms/d/1MllTwj8JtS2yDV8dERSx9-iQakt_pFQ483qYHoIS6rU/viewform?edit_requested=true",
       label: "Apply Now",
       isButton: true,
     },
   ];
+
+  const scrollToSection = (href: string) => {
+    const section = document.querySelector(href);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <motion.div
@@ -36,12 +50,6 @@ export default function Header() {
               alt="PDC Logo"
               className="h-10 w-auto max-h-10 max-w-full rounded-lg"
             />
-
-            {/* <img 
-              src="/ManipalLogo.jpg" 
-              alt="PDC Logo" 
-              className="h-10 w-auto rounded-lg"
-            /> */}
           </div>
 
           {/* Desktop Menu */}
@@ -51,6 +59,7 @@ export default function Header() {
                 key={index}
                 href={item.href}
                 target={item.isButton ? "_blank" : undefined}
+                rel={item.isButton ? "noopener noreferrer" : undefined}
                 className={`text-gray-600 hover:text-[#CF7500] transition-colors text-sm ${
                   item.isButton
                     ? "bg-[#CF7500] text-white px-4 py-2 rounded-full hover:bg-[#A55800]"
@@ -88,6 +97,7 @@ export default function Header() {
                     key={index}
                     href={item.href}
                     target={item.isButton ? "_blank" : undefined}
+                    rel={item.isButton ? "noopener noreferrer" : undefined}
                     className={`text-gray-600 hover:text-[#CF7500] transition-colors text-sm ${
                       item.isButton
                         ? "bg-[#CF7500] text-white px-4 py-2 rounded-full hover:bg-[#A55800] w-full text-center mx-4"

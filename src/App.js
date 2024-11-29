@@ -75,9 +75,10 @@ export default function ManipulLandingPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            An initiative by the Department of Computer Science & Engineering,
-            MIT Manipal to enhance student learning through hands-on product
-            creation.
+            An initiative focused on students' learning and skill development
+            through hands-on product creation. Opportunity to work on real-time
+            projects under faculty mentorship, aligned with industry standards
+            and technological advancements.
           </motion.p>
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -130,7 +131,7 @@ export default function ManipulLandingPage() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-lg text-gray-700 mb-4 text-center">
+              <p className="text-lg text-gray-700 mb-4 text-justify">
                 <strong>
                   The Department of Computer Science & Engineering (CSE)
                 </strong>{" "}
@@ -140,13 +141,13 @@ export default function ManipulLandingPage() {
                 research.
               </p>
 
-              <p className="text-lg text-gray-700 mb-4 text-center">
+              <p className="text-lg text-gray-700 mb-4 text-justify">
                 <strong>Vision:</strong> Excellence in Computer Science &
                 Engineering education through continuous learning, research, and
                 teamwork.
               </p>
 
-              <p className="text-lg text-gray-700 mb-4 text-center">
+              <p className="text-lg text-gray-700 mb-4 text-justify">
                 <strong>Mission:</strong> To impart excellent Computer Science &
                 Engineering education for professional roles in a changing and
                 challenging technological world, to advance knowledge through
@@ -155,7 +156,7 @@ export default function ManipulLandingPage() {
                 society.
               </p>
 
-              <p className="text-lg text-gray-700 mb-4 text-center">
+              <p className="text-lg text-gray-700 mb-4 text-justify">
                 Aligned with our department's vision, we have formed a faculty
                 team to enhance student growth through cutting-edge technologies
                 and mentorship, transforming innovative ideas into impactful
@@ -402,8 +403,8 @@ export default function ManipulLandingPage() {
                         Location
                       </h3>
                       <p className="text-sm sm:text-base text-gray-600">
-                        Manipal Institute of Technology, Manipal, Karnataka
-                        576104
+                        Department of Computer Science & Engineering, Manipal
+                        Institute of Technology, Manipal, Karnataka 576104
                       </p>
                     </div>
                   </div>
@@ -453,7 +454,7 @@ export default function ManipulLandingPage() {
 
       {/* Footer with Credits */}
       <footer className="bg-gray-900 text-white py-4">
-        <div className="max-5-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
               <p className="text-sm sm:text-base">
