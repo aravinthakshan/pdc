@@ -6,11 +6,6 @@ import {
   CheckBadgeIcon,
   UsersIcon,
   DocumentTextIcon,
-  ServerIcon,
-  TableCellsIcon,
-  DevicePhoneMobileIcon,
-  Cog6ToothIcon,
-  WrenchScrewdriverIcon,
   EnvelopeIcon,
   PhoneIcon,
   MapPinIcon,
@@ -65,9 +60,9 @@ export default function ManipulLandingPage() {
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             Product Development Centre
-            <span className="block text-[#d67520] mt-2">
+            {/* <span className="block text-[#d67520] mt-2">
               Empowering Students
-            </span>
+            </span> */}
           </motion.h1>
           <motion.p
             className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 text-[#6B7280]" // Light Gray for description
@@ -167,10 +162,67 @@ export default function ManipulLandingPage() {
         </div>
       </motion.div>
 
+      {/* Projects Section */}
+      <motion.div
+        id="projects"
+        className="py-16 bg-[#F4F4F4]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-9">
+          <motion.h2
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Upcoming Projects
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                className="bg-[#F4F4F4] rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="relative">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="bg-gray-100 text-gray-700 text-xs sm:text-sm px-2 py-1 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
       {/* Benefits Section */}
       <motion.div
         id="benefits"
-        className="py-16 bg-[#F4F4F4]"
+        className="py-16 bg-white"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -225,7 +277,7 @@ export default function ManipulLandingPage() {
             ].map((benefit, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-gray-100 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -237,63 +289,6 @@ export default function ManipulLandingPage() {
                 <p className="text-sm sm:text-base text-gray-600">
                   {benefit.description}
                 </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Projects Section */}
-      <motion.div
-        id="projects"
-        className="py-16 bg-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-9">
-          <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            Upcoming Projects
-          </motion.h2>
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="bg-[#F4F4F4] rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="relative">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-600 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-gray-100 text-gray-700 text-xs sm:text-sm px-2 py-1 rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -337,6 +332,7 @@ export default function ManipulLandingPage() {
 
             {/* Contact Section */}
             <motion.div
+              id="contact"
               className="bg-white rounded-xl shadow-md p-6 sm:p-8"
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

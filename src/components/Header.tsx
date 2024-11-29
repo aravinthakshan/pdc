@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -12,7 +12,7 @@ export default function Header() {
   interface MenuItem {
     href: string;
     label: string;
-    isButton?: boolean; // Optional property
+    isButton?: boolean;
   }
 
   const menuItems: MenuItem[] = [
@@ -31,17 +31,19 @@ export default function Header() {
   const scrollToSection = (href: string) => {
     const section = document.querySelector(href);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+      const sectionTop =
+        section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth",
+      });
     }
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <motion.div
-      className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <header className="fixed w-full z-50 transition-all duration-300 bg-white shadow-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 relative">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -58,6 +60,12 @@ export default function Header() {
               <a
                 key={index}
                 href={item.href}
+                onClick={(e) => {
+                  if (!item.isButton) {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }
+                }}
                 target={item.isButton ? "_blank" : undefined}
                 rel={item.isButton ? "noopener noreferrer" : undefined}
                 className={`text-gray-600 hover:text-[#CF7500] transition-colors text-sm ${
@@ -96,6 +104,14 @@ export default function Header() {
                   <a
                     key={index}
                     href={item.href}
+                    onClick={(e) => {
+                      if (!item.isButton) {
+                        e.preventDefault();
+                        scrollToSection(item.href);
+                      } else {
+                        setIsMobileMenuOpen(false);
+                      }
+                    }}
                     target={item.isButton ? "_blank" : undefined}
                     rel={item.isButton ? "noopener noreferrer" : undefined}
                     className={`text-gray-600 hover:text-[#CF7500] transition-colors text-sm ${
@@ -103,7 +119,6 @@ export default function Header() {
                         ? "bg-[#CF7500] text-white px-4 py-2 rounded-full hover:bg-[#A55800] w-full text-center mx-4"
                         : "w-full text-center"
                     }`}
-                    onClick={toggleMobileMenu}
                   >
                     {item.label}
                   </a>
@@ -113,6 +128,6 @@ export default function Header() {
           )}
         </AnimatePresence>
       </div>
-    </motion.div>
+    </header>
   );
 }
