@@ -29,7 +29,7 @@ const Hero = () => {
           variants={fadeInUp}
         >
           Product Development Centre
-          <span className="block text-[#d67520] mt-2">Empowering Students</span>
+          {/* <span className="block text-[#d67520] mt-2">Empowering Students</span> */}
         </motion.h1>
         <motion.p
           className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 text-[#6B7280]"
