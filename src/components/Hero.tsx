@@ -47,7 +47,7 @@ const Hero = () => {
               e.preventDefault();
               scrollToSection("#about");
             }}
-            className="bg-[#d67520] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#FF7A33] transition-colors inline-block"
+            className="bg-[#d67520] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#A55800] transition-colors inline-block"
           >
             Learn More
           </a>
