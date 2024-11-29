@@ -111,8 +111,8 @@ const EligibilityAndContact = () => {
                       Location
                     </h3>
                     <p className="text-sm sm:text-base text-gray-600">
-                      Department of Computer Science & Engineering, Manipal
-                      Institute of Technology, Manipal, Karnataka 576104
+                      Department of Computer Science & Engineering, MIT,
+                      Manipal, Karnataka 576104
                     </p>
                   </div>
                 </div>
