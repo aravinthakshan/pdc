@@ -8,7 +8,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="py-16 bg-[#E3E3E3]"
+      className="py-16 bg-[#efefef]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.8 } }}
       viewport={{ once: true }}
