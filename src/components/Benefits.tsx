@@ -53,7 +53,7 @@ const Benefits = () => {
   return (
     <motion.div
       id="benefits"
-      className="py-16 bg-[#F4F4F4]"
+      className="py-16 bg-[#E3E3E3]"
       initial="initial"
       animate="animate"
       variants={fadeIn}
