@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, fadeIn } from "../utils/animations";
 
 const Hero = () => {
+  const scrollToSection = useCallback((href: string) => {
+    const section = document.querySelector(href);
+    if (section) {
+      const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+      const sectionTop =
+        section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth",
+      });
+    }
+  }, []);
+
   return (
     <motion.div
       className="h-screen flex items-center justify-center bg-[#F4F4F4] text-black"
@@ -16,7 +29,7 @@ const Hero = () => {
           variants={fadeInUp}
         >
           Product Development Centre
-          {/* <span className="block text-[#d67520] mt-2">Empowering Students</span> */}
+          <span className="block text-[#d67520] mt-2">Empowering Students</span>
         </motion.h1>
         <motion.p
           className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 text-[#6B7280]"
@@ -30,6 +43,10 @@ const Hero = () => {
         <motion.div variants={fadeInUp}>
           <a
             href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("#about");
+            }}
             className="bg-[#d67520] text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-[#FF7A33] transition-colors inline-block"
           >
             Learn More
