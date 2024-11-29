@@ -31,7 +31,7 @@ const Hero = () => {
         <img
           src="/BKG.png" // Path to image in the public folder
           alt="Background"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-10"
         />
       </div>
 
