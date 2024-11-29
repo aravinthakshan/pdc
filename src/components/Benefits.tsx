@@ -27,7 +27,7 @@ const benefits = [
     icon: AcademicCapIcon,
     title: "Professional Recognition",
     description:
-      "On Completion, Students will get experience certificate useful for their summer internships. (Projects can be considered as part of their ITR*)",
+      "On Completion, Students will get experience certificate useful for their summer internships. Projects can be considered as part of their ITR*",
   },
   {
     icon: DocumentTextIcon,

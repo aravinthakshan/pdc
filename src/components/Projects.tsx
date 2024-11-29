@@ -8,21 +8,21 @@ const projects = [
     description:
       "Streamlined administrative tool for comprehensive faculty data management.",
     image: "./Faculty.png",
-    technologies: ["ReactJS", "DBMS", "Kubernetes"],
+    technologies: ["ReactJS", "Node.js", "MongoDB"],
   },
   {
     title: "Student AI Chatbot Support",
     description:
       "AI-powered support system to assist students with real-time queries.",
     image: "/Messaging.png",
-    technologies: ["GenAI", "Docker", "PostgreSQL"],
+    technologies: ["GenAI", "Python", "Langchain"],
   },
   {
-    title: "AI Powered Student Attendance System",
+    title: "Automated Student Attendance System",
     description:
       "Automated attendance tracking using advanced AI technologies.",
     image: "/Attendance.png",
-    technologies: ["Python", "TensorFlow", "React"],
+    technologies: ["Python", "React", "Django"],
   },
 ];
 
@@ -71,7 +71,7 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-gray-100 text-gray-700 text-xs sm:text-sm px-2 py-1 rounded"
+                      className="bg-white text-gray-700 text-xs sm:text-sm px-2 py-1 rounded"
                     >
                       {tech}
                     </span>
