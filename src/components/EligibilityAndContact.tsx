@@ -98,7 +98,7 @@ const EligibilityAndContact = () => {
                         href="tel:+919740288939"
                         className="text-gray-600 hover:text-[#CF7500] block"
                       >
-                        Dr. Manoj R
+                        Mr. Manoj R
                       </a>
                       <a
                         href="tel:+919740288939"
