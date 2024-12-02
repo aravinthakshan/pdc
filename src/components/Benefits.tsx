@@ -45,7 +45,7 @@ const benefits = [
     icon: FolderIcon,
     title: "Projects",
     description:
-      "Students from final year who wish to do a project for their 8th sem, can contact us as well.",
+      "Students from final year who wish to do a project for their 8th semester, can contact us as well.",
   },
 ];
 
