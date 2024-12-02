@@ -35,10 +35,10 @@ const Hero = () => {
           className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 text-[#6B7280]"
           variants={fadeInUp}
         >
-          An initiative focused on students' learning and skill development
-          through hands-on product creation. Opportunity to work on real-time
-          projects under faculty mentorship, aligned with industry standards and
-          technological advancements.
+          An initiative by Computer Science and Engineering Department, with
+          clear focus on students' learning and skill development through
+          hands-on product creation under faculty mentorship, aligned with
+          industry standards and technological advancements.
         </motion.p>
         <motion.div variants={fadeInUp}>
           <a

@@ -6,6 +6,7 @@ import {
   EnvelopeIcon,
   PhoneIcon,
   MapPinIcon,
+  UserIcon,
 } from "@heroicons/react/24/outline";
 
 const EligibilityAndContact = () => {
@@ -29,7 +30,7 @@ const EligibilityAndContact = () => {
             </h2>
             <ul className="space-y-4 text-sm sm:text-base text-gray-700">
               {[
-                "Open to B.Tech students from 4th, 6th, and 8th Semesters, no backlogs.",
+                "Open to all B.Tech students",
                 "Familiarity with HTML, CSS, and JavaScript, basic understanding of Java and OOP concepts.",
                 "Willingness to learn and adapt to new technologies, frameworks and dedicate sufficient time.",
                 "Good communication skills and the ability to work effectively in a team environment.",
@@ -63,19 +64,7 @@ const EligibilityAndContact = () => {
                         href="mailto:manoj.r@manipal.edu"
                         className="text-gray-600 hover:text-[#CF7500] block"
                       >
-                        manoj.r@manipal.edu
-                      </a>
-                      <a
-                        href="mailto:Kishore.b@manipal.edu"
-                        className="text-gray-600 hover:text-[#CF7500] block"
-                      >
-                        Kishore.b@manipal.edu
-                      </a>
-                      <a
-                        href="mailto:rani.panicker@manipal.edu"
-                        className="text-gray-600 hover:text-[#CF7500] block"
-                      >
-                        rani.panicker@manipal.edu
+                        pdc@manipal.edu
                       </a>
                     </div>
                   </div>
@@ -94,11 +83,34 @@ const EligibilityAndContact = () => {
                       >
                         +91 9740288939
                       </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <UserIcon className="w-6 h-6 text-[#CF7500] flex-shrink-0" />
+                  <div>
+                    <h3 className="text-base sm:text-lg font-medium text-gray-900">
+                      Faculty Coordinators
+                    </h3>
+                    <div className="space-y-1 text-sm sm:text-base">
                       <a
-                        href="tel:+918277109560"
+                        href="tel:+919740288939"
                         className="text-gray-600 hover:text-[#CF7500] block"
                       >
-                        +91 8277109560
+                        Dr. Manoj R
+                      </a>
+                      <a
+                        href="tel:+919740288939"
+                        className="text-gray-600 hover:text-[#CF7500] block"
+                      >
+                        Dr. Kishore B
+                      </a>
+                      <a
+                        href="tel:+919740288939"
+                        className="text-gray-600 hover:text-[#CF7500] block"
+                      >
+                        Dr. Rani Oomman Panicker
                       </a>
                     </div>
                   </div>

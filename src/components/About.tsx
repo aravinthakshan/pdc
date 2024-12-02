@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn } from "../utils/animations";
 {
   /* About Section */
 }
@@ -30,7 +29,7 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="/Building.jpg"
+              src="/BuildingM.jpeg"
               alt="About Image"
               className="rounded-lg shadow-md w-full object-cover"
             />
@@ -66,10 +65,9 @@ const About = () => {
             </p>
 
             <p className="text-lg text-gray-700 mb-4 text-justify">
-              Aligned with our department's vision, we have formed a faculty
-              team to enhance student growth through cutting-edge technologies
-              and mentorship, transforming innovative ideas into impactful
-              products.
+              Aligning with our department's vision, we have established a
+              center focused on students' skill development, assisting them in
+              transforming innovative ideas into impactful products.
             </p>
           </motion.div>
         </div>

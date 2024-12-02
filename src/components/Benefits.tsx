@@ -15,7 +15,7 @@ const benefits = [
     icon: RocketLaunchIcon,
     title: "Real-world Experience",
     description:
-      "Gain hands-on experience in full-stack development and project management methodologies.",
+      "Gain hands-on experience in product development and project management methodologies.",
   },
   {
     icon: CheckBadgeIcon,
@@ -33,7 +33,7 @@ const benefits = [
     icon: DocumentTextIcon,
     title: "Recommendation Letters",
     description:
-      "Receive experience certificates and potential letters of recommendation, from the CSE department on successful completion*",
+      "Receive experience certificate or Letter of Recommendation on successful *",
   },
   {
     icon: UsersIcon,
@@ -45,7 +45,7 @@ const benefits = [
     icon: FolderIcon,
     title: "Projects",
     description:
-      "Build a protfolio project to add to your resume, students from final year who wish to do a project for their 8th sem, can contact us as well.",
+      "Students from final year who wish to do a project for their 8th sem, can contact us as well.",
   },
 ];
 
