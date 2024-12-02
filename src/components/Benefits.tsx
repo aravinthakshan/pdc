@@ -21,19 +21,19 @@ const benefits = [
     icon: CheckBadgeIcon,
     title: "Industry-Relevant Skills",
     description:
-      "Develop industry relevant skills in building modern technologies.",
+      "Develop industry-relevant skills in building modern technologies.",
   },
   {
     icon: AcademicCapIcon,
     title: "Professional Recognition",
     description:
-      "On Completion, Students will recieve experience certificates useful for their summer internships. Projects can be considered as part of their ITR*",
+      "On completion, Students will recieve experience certificates useful for their summer internships. Projects can be considered as part of their ITR*",
   },
   {
     icon: DocumentTextIcon,
     title: "Recommendation Letters",
     description:
-      "Receive experience certificate or Letter of Recommendation on successful *",
+      "Receive experience certificates or letters of recommendation on successful completion.*",
   },
   {
     icon: UsersIcon,
@@ -45,7 +45,7 @@ const benefits = [
     icon: FolderIcon,
     title: "Projects",
     description:
-      "Students from final year who wish to do a project for their 8th semester, can contact us as well.",
+      "Final-year students who wish to do a project for their 8th semester can contact us as well.",
   },
 ];
 
