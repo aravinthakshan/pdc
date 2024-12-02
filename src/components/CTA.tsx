@@ -12,7 +12,7 @@ const CTA = () => {
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-1 lg:px-8">
         <motion.h2
-          className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4"
+          className="text-4xl font-bold text-center text-gray-900 mb-8 sm:mb-12"
           variants={fadeInUp}
         >
           Join the Product Development Centre

@@ -62,18 +62,18 @@ const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 relative">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-3 relative">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <img
               src="/ManipalLogo.jpg"
               alt="PDC Logo"
-              className="h-10 w-auto max-h-10 max-w-full rounded-lg"
+              className="h-11 w-auto max-h-11 max-w-full rounded-lg"
             />
           </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-6 items-center">
+          <nav className="hidden md:flex space-x-7 items-center">
             {menuItems.map((item, index) => (
               <motion.a
                 key={index}
@@ -86,9 +86,9 @@ const Header: React.FC = () => {
                 }}
                 target={item.isButton ? "_blank" : undefined}
                 rel={item.isButton ? "noopener noreferrer" : undefined}
-                className={`text-gray-600 hover:text-[#CF7500] transition-colors text-sm ${
+                className={`text-gray-600 hover:text-[#CF7500] transition-colors text-base ${
                   item.isButton
-                    ? "bg-[#CF7500] text-white px-4 py-2 rounded-full hover:bg-[#A55800]"
+                    ? "bg-[#CF7500] text-white px-5 py-2.5 rounded-full hover:bg-[#A55800]"
                     : ""
                 }`}
                 variants={fadeIn}
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </motion.button>
         </div>
 

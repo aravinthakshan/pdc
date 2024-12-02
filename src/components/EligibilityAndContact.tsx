@@ -61,7 +61,7 @@ const EligibilityAndContact = () => {
                     </h3>
                     <div className="space-y-1 text-sm sm:text-base">
                       <a
-                        href="mailto:manoj.r@manipal.edu"
+                        href="mailto:pdc@manipal.edu"
                         className="text-gray-600 hover:text-[#CF7500] block"
                       >
                         pdc@manipal.edu
